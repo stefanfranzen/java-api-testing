@@ -1,7 +1,7 @@
 import org.junit.Test;
 import static io.restassured.RestAssured.given;
 
-public class TestGetDog {
+public class TestDog {
     String baseUrl = "https://dog.ceo";
 
     @Test
