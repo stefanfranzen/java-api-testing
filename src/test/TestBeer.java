@@ -12,7 +12,8 @@ public class TestBeer {
             get(baseUrl + "/beers").
         then().
             header("Content-Type", "application/json; charset=utf-8").
-            statusCode(200);
+            statusCode(200).
+            log().everything();
     }
 
     @Test
@@ -25,7 +26,8 @@ public class TestBeer {
                 "id", hasItem(1),
                 "name", hasItem("Buzz"),
                 "tagline", hasItem("A Real Bitter Experience.")
-            );
+            ).
+            log().everything();
     }
 
     @Test
@@ -34,7 +36,8 @@ public class TestBeer {
         when().
             get(baseUrl + "/beers?abv_gt=6").
         then().
-            body("abv.find {it}", greaterThanOrEqualTo(6f));
+            body("abv.find {it}", greaterThanOrEqualTo(6f)).
+            log().everything();
     }
 
     @Test
@@ -43,6 +46,7 @@ public class TestBeer {
         when().
             get(baseUrl + "/beers?abv_lt=6").
         then().
-            body("abv.find {it}", lessThanOrEqualTo(6f));
+            body("abv.find {it}", lessThanOrEqualTo(6f)).
+            log().everything();
     }
 }

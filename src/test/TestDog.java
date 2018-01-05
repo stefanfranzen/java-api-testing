@@ -10,8 +10,8 @@ public class TestDog {
         when().
             get(baseUrl + "/api/breeds/list/all").
         then().
-            statusCode(200);
-
+            statusCode(200).
+            log().everything();
     }
 
     @Test
@@ -20,6 +20,7 @@ public class TestDog {
         when().
             get(baseUrl + "/api/breeds/list/allz").
         then().
-            statusCode(404);
+            statusCode(404).
+            log().everything();
     }
 }

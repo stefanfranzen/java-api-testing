@@ -11,7 +11,8 @@ public class TestQRCode {
         when().
             post(baseUrl + "/create-qr-code/").
         then().
-            statusCode(200);
+            statusCode(200).
+            log().everything();
     }
 
     @Test
@@ -26,7 +27,8 @@ public class TestQRCode {
         when().
             post(baseUrl + "/create-qr-code/").
         then().
-            statusCode(200);
+            statusCode(200).
+            log().everything();
     }
 
     @Test
@@ -35,7 +37,8 @@ public class TestQRCode {
         when().
             post(baseUrl + "/create-qr-code/").
         then().
-            statusCode(500);
+            statusCode(500).
+            log().everything();
     }
 
     @Test
@@ -45,6 +48,7 @@ public class TestQRCode {
         when().
             post(baseUrl + "/create-qr-code/").
         then().
-            statusCode(400);
+            statusCode(400).
+            log().everything();
     }
 }
